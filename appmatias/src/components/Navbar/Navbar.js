@@ -1,5 +1,6 @@
 import './Navbar.css'
 import CartWidget from '../CartWidget/CartWidget'
+import {Link} from 'react-router-dom'
 
 const Navbar = () => {
     return (
@@ -22,9 +23,9 @@ const Navbar = () => {
             Productos
           </a>
           <ul class="dropdown-menu">
-            <li><button className='Button'>Cervezas</button></li>
-            <li><button className='Button'>Vinos</button></li>
-            <li> <button className='Button'>Espumantes</button></li>
+            <li><Link to={`/category/Whisky`} className='Button'>Whisky</Link></li>
+            <li><Link  to={`/category/Vinos`}className='Button'>Vinos</Link></li>
+            <li> <Link  to={`/category/Espumantes`} className='Button'>Espumantes</Link></li>
           </ul>
         </li>
       </ul>
@@ -36,20 +37,7 @@ const Navbar = () => {
     )
 }
 
-<nav style={{ display: 'flex', justifyContent: 'space-around', background: 'rgb(255, 233, 160)'}}>
-            <div>
-                <h1>Barrica Bebidas</h1>
-                <img src ="https://static.wixstatic.com/media/d1ee5b_2ca577cb4f59414289ae98d42633bb9b~mv2.png/v1/fill/w_2500,h_2500,al_c/d1ee5b_2ca577cb4f59414289ae98d42633bb9b~mv2.png " width="250" height="250"alt="barrica" />
-            </div>
-            <div>
-                <button className='Button'>Cervezas</button>
-                <button className='Button'>Vinos</button>
-                <button className='Button'>Espumantes</button>
-            </div>
-            <div>
-                <CartWidget />
-            </div>
-        </nav>
+
 
 
 export default Navbar
