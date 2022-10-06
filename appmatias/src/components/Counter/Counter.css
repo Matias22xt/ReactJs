@@ -1,10 +1,36 @@
 .Counterr {
-    width: auto;
-    background-color: crimson;
-    padding: 1rem;
+    padding: 5px;
     text-align: center;
   
 }
 .numero {
-    color: beige;
+    color: rgb(41, 41, 37);
   }  
+
+  
+button {
+    padding: 1.3em 3em;
+    font-size: 19px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: rgb(227, 236, 97);
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  button:hover {
+    background-color: #e9cd2c;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  button:active {
+    transform: translateY(-1px);
+  }

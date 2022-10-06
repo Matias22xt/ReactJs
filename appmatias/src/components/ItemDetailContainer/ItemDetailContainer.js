@@ -2,12 +2,13 @@ import { useState,useEffect} from "react"
 import { getProduct } from "../../asyncMock"
 import { useParams } from "react-router-dom"
 import Counter from '../Counter/Counter'
+import './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
     const[product, setProduct] = useState({})
     const[loading, settloading] = useState(true)
     const onAdd=(quantity) => {
-console.log(`compraste ${quantity} unidades` );
+alert(`Agregaste ${quantity} unidades` );
     }
 
 const {productId} = useParams ()
@@ -26,15 +27,17 @@ if(loading) {
 
     return(
         <div>
-            <h1>Detalle de productos</h1>
-            <div>
+             <div className="container card col-3">
                 <h1>{product.name}</h1>
-                
+                <img src={product.img} alt="" className="imagenes"/>
                 <h2>{product.category}</h2>
                 <h3>${product.price}</h3>
-                <h3>{product.description}</h3>
-                <Counter initial={1} stock= {10} onAdd={onAdd}/>
+               <Counter initial={1} stock= {10} onAdd={onAdd}/>
             </div>
+            <div className="description">
+                <h3>{product.description}</h3>
+            </div>
+
         </div>
     )
 }

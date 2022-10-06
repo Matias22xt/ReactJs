@@ -1,7 +1,7 @@
 const products = [
 {
     id : '1',
-    name : 'Johnnie Walker Red Label 750 Ml',
+    name : 'Johnnie Walker Red Label',
     price : 4100,
     category : 'Whisky',
     img : 'https://d3ugyf2ht6aenh.cloudfront.net/stores/001/069/568/products/red-label-750-ml1-2cc5c0a70f3e86311016262835929050-480-0.jpg',

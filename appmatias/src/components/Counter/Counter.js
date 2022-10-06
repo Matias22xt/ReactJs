@@ -21,14 +21,14 @@ const Counter = ({stock,onAdd}) => {
 
     return (
         <div className='Counterr'>
-            <h1 className='numero'>{count}</h1>
-            <button onClick={decrement}>-</button>
-            <button disabled={count >= stock} onClick={increment}>+</button>
-            
             <div>
             <button disabled={stock<=0} onClick={() => onAdd(count)}>Agregar al carrito</button>
             </div>
-        </div>
+            <h1 className='numero'>{count}</h1>
+            <button className='+' disabled={count >= stock} onClick={increment}>+</button>
+            <button className='-' onClick={decrement}>-</button>
+            
+         </div>
     )
 }
 
