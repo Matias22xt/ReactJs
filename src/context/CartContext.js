@@ -4,7 +4,7 @@ export const CartContext = createContext()
 
 export const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([])
-    // const [totalQuantity, setTotalQuantity] = useState(0)
+     const [totalQuantity, setTotalQuantity] = useState(0)
     console.log(cart)
 
     const addItem = (productToAdd) => {
@@ -24,10 +24,10 @@ export const CartContextProvider = ({ children }) => {
         setCart(cartWithoutItem)
       }
 
-    //   useEffect(() => {
-    //     const totalQuantity = getTotalQuantity()
-    //     setTotalQuantity(totalQuantity)
-    //   }, [cart])
+       useEffect(() => {
+        const totalQuantity = getTotalQuantity()
+         setTotalQuantity(totalQuantity)
+       }, [cart])
 
       const getTotalQuantity = () => {
         let totalQuantity = 0
@@ -41,7 +41,7 @@ export const CartContextProvider = ({ children }) => {
     
 
     return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, getTotalQuantity }}>
+        <CartContext.Provider value={{ cart, addItem, removeItem, totalQuantity }}>
             {children}
         </CartContext.Provider>
     )
