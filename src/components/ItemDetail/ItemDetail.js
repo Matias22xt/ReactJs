@@ -8,7 +8,7 @@ import { NotificationContext } from '../../notification/Notification'
 const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
     const [quantityToAdd, setQuantityToAdd] = useState(0)
 
-    const { addItem } = useContext(CartContext)
+    const { addItem,  getProductQuantity } = useContext(CartContext)
     const { setNotification } = useContext(NotificationContext)
 
     const handleOnAdd = (quantity) => {
@@ -22,7 +22,9 @@ const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
         setNotification('success', `Se agrego correctamente ${quantity} ${name}`)
     }
 
-    return (
+    const productAddedQuantity = getProductQuantity(id)
+    
+     return (
         <article className="CardItem">
             <header className="Header">
                 <h2 className="ItemHeader">
@@ -46,7 +48,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
             <footer className='ItemFooter'>
                 {
                     quantityToAdd === 0 ? (
-                        <ItemCount onAdd={handleOnAdd} stock={stock} />
+                        <ItemCount onAdd={handleOnAdd} stock={stock} initial={productAddedQuantity} />
                     ) : (
                         <Link to='/cart'>Finalizar compra</Link>
                     )

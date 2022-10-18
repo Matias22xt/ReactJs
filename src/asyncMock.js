@@ -17,23 +17,7 @@ description: 'Un gran espumante, fruto exclusivo de una vendimia antológica. Un
 
 ]
 
-/*export const getProducts = (categoryId) => {
-    return new Promise ((resolve) =>{
-        setTimeout(() => {
-            resolve (categoryId ? products.filter(prod=>prod.category === categoryId) : products)
-        },1000)
 
-    })
-}
-
-export const getProduct = (id) => {
-    return new Promise ((resolve) =>{
-        setTimeout(() => {
-            resolve (products.find(prod=> prod.id === id))
-        },1000)
-
-    })
-}*/
 export const getProducts = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
