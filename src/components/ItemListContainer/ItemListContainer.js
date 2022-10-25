@@ -28,9 +28,10 @@ const collectionRef = categoryId
             return {id: doc.id, ...data}
         })
         setProducts(productsAdapted)
-        .catch(error=>{
-               setNotification('error','No se pueden obtener los productos')
+       
         })
+         .catch(error=>{
+               setNotification('error','No se pueden obtener los productos')
       })
       .finally(() => {
         setLoading(false)
