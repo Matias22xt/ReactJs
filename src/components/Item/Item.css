@@ -1,0 +1,38 @@
+.ItemImg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+.title{
+    font-size: 20px;
+}
+.cardd{
+    margin: 15px;
+    width: 240px;
+    height: 310px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+    border-radius: 20px;
+}
+.cardd:hover {
+    box-shadow: 5px 10px 20px 1px rgba(234, 238, 5, 0.705) !important;
+}
+
+.overFlow{
+    overflow: hidden;
+}
+
+.cardd-img-top{
+transition: all 0.2s ease-in-out;
+} 
+.cardd-img-top:hover{
+transform: scale(1.8);
+    } 
+
+  

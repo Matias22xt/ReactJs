@@ -2,7 +2,6 @@ import  './ItemListContainer.css'
 import {useState,useEffect,useContext} from 'react'
 import {collection, getDocs,query,where} from 'firebase/firestore'
 import {db} from '../../services/firebase'
-//import { getProducts, getProductsByCategory} from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import {NotificationContext} from '../../notification/Notification'
@@ -37,15 +36,7 @@ const collectionRef = categoryId
         setLoading(false)
       })
       
-    //  const asyncFunction = categoryId ? getProductsByCategory : getProducts
-      
-    //  asyncFunction(categoryId).then(response => {
-     //     setProducts(response)
-     // }).catch(error => {
-     //     console.log(error)
-     // }).finally(() => {
-     //    setLoading(false)
-     // })  
+     
   }, [categoryId])
 
      if(loading) {
@@ -55,7 +46,7 @@ const collectionRef = categoryId
      return (
       <div onClick={() => console.log('click en itemlistcontainer')}>
           <h1>{`${greeting} ${categoryId || ''}`}</h1>
-          {/* <button onClick={(e) => console.log(e)}>boton</button> */}
+      
           <ItemList products={products} />
       </div>
   )

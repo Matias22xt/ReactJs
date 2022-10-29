@@ -7,7 +7,7 @@ const Navbar = () => {
         <nav class="navbar navbar-expand-lg" style={{background: 'rgb(255, 233, 160)'}}>
            <div class="container-fluid">
            <Link to='/'>
-              <a class="navbar-brand" href="1">Barrica Bebidas</a>
+              <a class="navbar-brand titulo" href="2">Barrica Bebidas</a>
               </Link>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                      <span class="navbar-toggler-icon"></span>

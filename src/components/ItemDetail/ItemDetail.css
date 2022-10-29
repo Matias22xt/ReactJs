@@ -3,8 +3,8 @@
     padding: 30px;
     margin: 30px;
     font-size: 10px;
-    background-color: papayawhip;
-    border: 1px solid #e1e1e1;
+    background-color: rgb(231, 197, 143);
+    border: 1px solid #070707;
     border-radius: 10px;
 }
 
@@ -24,13 +24,14 @@
     font-size: 12px;
     display: flex;
     justify-content: space-around;
+    color: rgb(134, 8, 8);
 }
 
 .Button {
     width: auto;
     padding: 12px;
     font-size: 8px;
-    background: #8C30F5;
+    background: rgb(231, 197, 143);
     border-radius: 8px;
     flex: none;
     display: flex;

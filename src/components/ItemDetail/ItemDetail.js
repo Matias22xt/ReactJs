@@ -42,15 +42,15 @@ const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
                     Descripción: {description}
                 </p>
                 <p className="Info">
-                    Precio: {price}
+                    Precio: ${price}
                 </p>
             </section>           
-            <footer className='ItemFooter'>
+            <footer className='Button'>
                 {
                     quantityToAdd === 0 ? (
                         <ItemCount onAdd={handleOnAdd} stock={stock} initial={productAddedQuantity} />
                     ) : (
-                        <Link to='/cart'>Finalizar compra</Link>
+                        <Link to='/cart' className='Button'>Finalizar compra</Link>
                     )
                 }
             </footer>

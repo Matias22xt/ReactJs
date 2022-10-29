@@ -1,3 +1,4 @@
+import './Checkout.css'
 import { useState, useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import { getDocs, addDoc, collection, where, query, documentId, writeBatch } from 'firebase/firestore'
@@ -13,9 +14,11 @@ const Checkout = () => {
         try {
             const objOrder = {
                 buyer: {
-                    name: 'Matias Herrera',
-                    phone: '123456789',
-                    email: 'matiasherrera_081@hotmail.com'
+                    name: '',
+                    direccion: '',
+                    email: '',
+                    phone: '',
+                    fecha: ''
                 },
                 items: cart,
                 total
@@ -70,8 +73,18 @@ const Checkout = () => {
 
     return (
         <>
-            <h1>Checkout</h1>
-            <button onClick={createOrder}>Agregar documento</button>
+            <h1 className='registrarse'>Registrarse</h1>
+            <div class="card">
+    <div class="card__form">
+        <input type="text" placeholder="Apellido y nombre"/>
+        <input type="text" placeholder="Dirección"/>
+        <input type="email" placeholder="email"/>
+        <input type="tel" placeholder="Teléfono"/>
+        <button class="sign-up" onClick={createOrder}>Enviar</button>
+    </div>
+</div>
+            
+         
             
         </>
     )
