@@ -5,20 +5,41 @@ import { getDocs, addDoc, collection, where, query, documentId, writeBatch } fro
 import { db } from '../../services/firebase'
 
 const Checkout = () => {
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const [datos, setDatos] = useState({
+        name:'',
+        direccion:'',
+        email:'',
+        verEmail:'',
+        phone:'',
+ });
+ const handleNameChange = (event) => {
+console.log(event.target.value)
+setDatos({
+    ...datos,
+    [event.target.name] : event.target.value
+   } )
+ }
+ const enviarDatos = (event) => {
+event.preventDefault();
+ }
+
+
 
     const { cart, total, clearCart } = useContext(CartContext)
+   
+
 
     const createOrder = async () => {
         setLoading(true)
         try {
             const objOrder = {
                 buyer: {
-                    name: '',
-                    direccion: '',
-                    email: '',
-                    phone: '',
-                    fecha: ''
+                    name:'',
+                    direccion:'',
+                    email:'',
+                    verEmail:'',
+                    phone:'',
                 },
                 items: cart,
                 total
@@ -74,13 +95,14 @@ const Checkout = () => {
     return (
         <>
             <h1 className='registrarse'>Registrarse</h1>
-            <div class="card">
+            <div class="card" onSubmit={enviarDatos}>
     <div class="card__form">
-        <input type="text" placeholder="Apellido y nombre"/>
-        <input type="text" placeholder="Dirección"/>
-        <input type="email" placeholder="email"/>
-        <input type="tel" placeholder="Teléfono"/>
-        <button class="sign-up" onClick={createOrder}>Enviar</button>
+        <input type="text" name="name" onChange={handleNameChange}  placeholder="Apellido y nombre"/>
+        <input type="text" name="direccion" onChange={handleNameChange} placeholder="Dirección"/>
+        <input type="email" name="email" onChange={handleNameChange} placeholder="email"/>
+        <input type="email" name="verEmail" onChange={handleNameChange} placeholder="email"/>
+        <input type="tel" name="phone" onChange={handleNameChange} placeholder="Teléfono"/>
+        <button type="submit" class="sign-up" onClick={createOrder}>Enviar</button>
     </div>
 </div>
             

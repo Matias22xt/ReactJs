@@ -12,7 +12,7 @@ export const CartContextProvider = ({ children }) => {
         if(!isInCart(productToAdd.id)) {
           setCart([...cart, productToAdd])
         } else {
-          console.log('ya esta agregado')
+        
           const cartUpdated = cart.map(prod => {
             if(prod.id === productToAdd.id) {
               const productUpdated = {

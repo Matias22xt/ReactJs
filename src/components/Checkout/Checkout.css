@@ -1,7 +1,9 @@
 /* From uiverse.io by @satyamchaudharydev */
 .card {
+  margin: 15px;
+  padding: 15px;
     width: 270px;
-    height: 354px;
+    height: 387px;
     text-align: center;
     display: flex;
     align-items: center;

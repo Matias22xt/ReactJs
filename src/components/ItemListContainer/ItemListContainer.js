@@ -44,7 +44,7 @@ const collectionRef = categoryId
      }
 
      return (
-      <div onClick={() => console.log('click en itemlistcontainer')}>
+      <div>
           <h1>{`${greeting} ${categoryId || ''}`}</h1>
       
           <ItemList products={products} />

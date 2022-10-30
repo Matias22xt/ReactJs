@@ -27,16 +27,12 @@ const docRef = doc(db,'products', productId )
     }).finally(() =>{
         setLoading(false)
     })
-   // getProductById(productId).then(response => {
-   //   setProduct(response)
-   //}).finally(() => {
-   //     setLoading(false)
-  // })
+ 
 }, [productId])
    
 
 if(loading) {
-    return <h1>Cargando...</h1>
+    return <h1 className='cargando'>Cargando...</h1>
 }
 
     return(
